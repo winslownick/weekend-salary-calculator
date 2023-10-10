@@ -1,0 +1,46 @@
+/* 
+  Here is a simple flexbox recipe for a <body>
+  element that functions as a flex container.
+  
+  The <body> has three flex children:
+    1. <header>
+    2. <main>
+    3. <footer>
+  
+  Each flex child has its own rule applied to it
+  that dictates how much vertical space it should occupy:
+    1. <header>: Always take up 8em of vertical space.
+    2. <main>: Automatically take up any remaining space
+               within the flex container.
+    3. <footer>: Always take up 8em of vertical space.
+  
+  Feel free to scrap this or build on top of it with
+  your own CSS. 🙂
+*/
+
+/* We need the <body> element to be "hardcoded" to take
+   up 100% of the available vertical space: */
+html, body {
+  min-height: 100vh;
+}
+
+/* Specifies the behavior of our flex container: */
+body {
+  /* Makes <body> a flex container: */
+  display: flex;
+  /* Makes <body>'s flex children be displayed
+     vertically. Each child will be displayed as
+     a row in a column: */
+  flex-direction: column;
+}
+
+/* Specifies the behavior of <body>'s three flex children: */
+header {
+  height: 8em;
+}
+main {
+  flex: auto;
+}
+footer {
+  height: 8em;
+}
