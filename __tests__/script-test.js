@@ -118,6 +118,25 @@ describe(`Weekend Salary Calculator:`, () => {
     expect(getByText(table, /96000|96,000/)).toBeInTheDocument()
   })
 
+  it(`Clears out the form inputs after a new employee is submitted`, () => {
+    const table = container.querySelector('table')
+    
+    submitEmployee(container, testEmployees[0])
+
+    const firstNameInput = getByPlaceholderText(container, /First Name/)
+    const lastNameInput = getByPlaceholderText(container, /Last Name/)
+    const idInput = getByPlaceholderText(container, /ID/)
+    const titleInput = getByPlaceholderText(container, /Title/)
+    const annualSalaryInput = getByPlaceholderText(container, /Annual Salary/)
+
+    // Verify that each input has been cleared:
+    expect(firstNameInput).not.toHaveValue()
+    expect(lastNameInput).not.toHaveValue()
+    expect(idInput).not.toHaveValue()
+    expect(titleInput).not.toHaveValue()
+    expect(annualSalaryInput).not.toHaveValue()
+  })
+
   it(`Updates the total monthly salary value when a single employee is added`, () => {
     const footer = container.querySelector('footer')
     
