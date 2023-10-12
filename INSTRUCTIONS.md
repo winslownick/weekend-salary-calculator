@@ -19,7 +19,7 @@ Your task is to create an application that records employee salaries and adds sa
 
 ## Please Don't Fork This Repo:
 
-Instead of forking, please click **Use This Template** (the green button) and name your new repo **weekend-salary-calculator**. Then, you can clone it as usuall.
+Instead of forking, please click **Use This Template** (the green button) and name your new repo **weekend-salary-calculator**. Then, you can clone it as usual.
 
 By clicking **Use This Template**, you are essentially still forking the repo. But, the difference is that:
 * It will appear as a **public** repository in your GitHub.
@@ -35,23 +35,25 @@ After you've cloned this repository, you'll need to:
 * Run `cd weekend-salary-calculator` to get "inside" the project directory.
 * Run `npm install` to install the libraries that the automated tests rely on.
 
-Then, at any point, you'll be execute to run the test suite by running:
+Then, at any point, you can execute the test suite by running:
 * `npm test`
 
-* **PLEASE DO**:
-    * Leverage them to ensure that you are satisfying each of the requirements.
-    * Run them often to verify your code's behavior as you implement each step of required functionality.
+Nifty!
 
-* **FOR THE TESTS TO WORK**:
-    * Your form's submit button **must** have *Submit* as its text.
-    * Your form's inputs must have these exact placeholder values:
-        * *First Name*
-        * *Last Name*
-        * *ID*
-        * *Title*
-        * *Annual Salary*
-    * You must use a `<table>` element, where each employee is represented by a single `<tr>`.
-    * The *total monthly* cost must be rendered somewhere inside the `<footer>` element.
+**FOR THE TESTS TO WORK**:
+* Your form's submit button **must** have *Submit* as its text.
+* Your form's inputs must have these exact placeholder values:
+    * *First Name*
+    * *Last Name*
+    * *ID*
+    * *Title*
+    * *Annual Salary*
+* You must use a `<table>` element, where each employee is represented by a single `<tr>`.
+* The *total monthly* cost must be rendered somewhere inside the `<footer>` element.
+
+**PLEASE DO**:
+* Leverage the tests to ensure that you are satisfying each of the requirements.
+* Run the tests often to verify your code's behavior as you implement each step of required functionality.
 
 ## Wireframe:
 
@@ -61,7 +63,7 @@ Then, at any point, you'll be execute to run the test suite by running:
 
 ## Stretch Goals:
 
-* Add styling or extra functionality that fits with the theme of this assignment.
+* Add styling or extra functionality that fits with the theme of this assignment. (Feel free to be super creative!)
 
 * When an employee is deleted, update the footer's monthly cost to reflect that employee's removal. _HINT:_ You will need to figure out which employee was removed, in order to subtract their salary from the total. This is tricky! 
 
