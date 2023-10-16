@@ -41,13 +41,18 @@ Then, at any point, you can execute the test suite by running:
 Nifty!
 
 **FOR THE TESTS TO WORK**:
-* Your form's submit button **must** have *Submit* as its text.
-* Your form's inputs must have these exact placeholder values:
-    * *First Name*
-    * *Last Name*
-    * *ID*
-    * *Title*
-    * *Annual Salary*
+* Your form's submit button **must** have a `data-testid="submitButton"` attribute. Like so:
+  * ```html
+    <button data-testid="submitButton">
+      Submit
+    </button>
+    ```
+* Your form's inputs must have these exact attributes:
+    * `data-testid="firstNameInput"`
+    * `data-testid="lastNameInput"`
+    * `data-testid="idInput"`
+    * `data-testid="titleInput"`
+    * `data-testid="annualSalaryInput"`
 * You must use a `<table>` element, where each employee is represented by a single `<tr>`.
 * The *total monthly* cost must be rendered somewhere inside the `<footer>` element.
 

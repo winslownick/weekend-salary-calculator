@@ -2,7 +2,7 @@
 // 🔥 DO NOT MODIFY THIS FILE!!!!! 🔥
 // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
 
-const { fireEvent, getByText, queryByText, getByRole, getByPlaceholderText } = require('@testing-library/dom')
+const { fireEvent, getByText, queryByText, getByTestId } = require('@testing-library/dom')
 require('@testing-library/jest-dom')
 const { JSDOM } = require('jsdom')
 
@@ -63,11 +63,11 @@ describe(`Weekend Salary Calculator:`, () => {
     // 4. Clicks the submit button.
   function submitEmployee(container, employee) {
     // Select all five employee inputs:
-    const firstNameInput = getByPlaceholderText(container, /First Name/)
-    const lastNameInput = getByPlaceholderText(container, /Last Name/)
-    const idInput = getByPlaceholderText(container, /ID/)
-    const titleInput = getByPlaceholderText(container, /Title/)
-    const annualSalaryInput = getByPlaceholderText(container, /Annual Salary/)
+    const firstNameInput = getByTestId('firstNameInput')
+    const lastNameInput = getByTestId('lastNameInput')
+    const idInput = getByTestId('idInput')
+    const titleInput = getByTestId('titleInput')
+    const annualSalaryInput = getByTestId('annualSalaryInput')
     
     // Populate the inputs with employee data:
     fireEvent.change(firstNameInput, {target: {value: employee.firstName}})
@@ -77,7 +77,7 @@ describe(`Weekend Salary Calculator:`, () => {
     fireEvent.change(annualSalaryInput, {target: {value: employee.annualSalary}})
     
     // Select the submit button:
-    const submitButton = getByRole(container, 'button', { name: 'Submit' })
+    const submitButton = getByTestId('submitButton')
     
     // Click the submit button:
     submitButton.click()
@@ -123,11 +123,12 @@ describe(`Weekend Salary Calculator:`, () => {
     
     submitEmployee(container, testEmployees[0])
 
-    const firstNameInput = getByPlaceholderText(container, /First Name/)
-    const lastNameInput = getByPlaceholderText(container, /Last Name/)
-    const idInput = getByPlaceholderText(container, /ID/)
-    const titleInput = getByPlaceholderText(container, /Title/)
-    const annualSalaryInput = getByPlaceholderText(container, /Annual Salary/)
+    // Select all five employee inputs:
+    const firstNameInput = getByTestId('firstNameInput')
+    const lastNameInput = getByTestId('lastNameInput')
+    const idInput = getByTestId('idInput')
+    const titleInput = getByTestId('titleInput')
+    const annualSalaryInput = getByTestId('annualSalaryInput')
 
     // Verify that each input has been cleared:
     expect(firstNameInput).not.toHaveValue()
