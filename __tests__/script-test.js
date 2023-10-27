@@ -63,11 +63,11 @@ describe(`Weekend Salary Calculator:`, () => {
     // 4. Clicks the submit button.
   function submitEmployee(container, employee) {
     // Select all five employee inputs:
-    const firstNameInput = getByTestId('firstNameInput')
-    const lastNameInput = getByTestId('lastNameInput')
-    const idInput = getByTestId('idInput')
-    const titleInput = getByTestId('titleInput')
-    const annualSalaryInput = getByTestId('annualSalaryInput')
+    const firstNameInput = getByTestId(container, 'firstNameInput')
+    const lastNameInput = getByTestId(container, 'lastNameInput')
+    const idInput = getByTestId(container, 'idInput')
+    const titleInput = getByTestId(container, 'titleInput')
+    const annualSalaryInput = getByTestId(container, 'annualSalaryInput')
     
     // Populate the inputs with employee data:
     fireEvent.change(firstNameInput, {target: {value: employee.firstName}})
@@ -77,7 +77,7 @@ describe(`Weekend Salary Calculator:`, () => {
     fireEvent.change(annualSalaryInput, {target: {value: employee.annualSalary}})
     
     // Select the submit button:
-    const submitButton = getByTestId('submitButton')
+    const submitButton = getByTestId(container, 'submitButton')
     
     // Click the submit button:
     submitButton.click()
@@ -93,7 +93,7 @@ describe(`Weekend Salary Calculator:`, () => {
     expect(getByText(table, /van Vleuten/)).toBeInTheDocument()
     expect(getByText(table, /10101/)).toBeInTheDocument()
     expect(getByText(table, /Professional Cyclist/)).toBeInTheDocument()
-    expect(getByText(table, /120012|12,0012/)).toBeInTheDocument()
+    expect(getByText(table, /120012|120,012/)).toBeInTheDocument()
   })
 
   it(`Adds multiple new employees' data to the table`, () => {
@@ -106,7 +106,7 @@ describe(`Weekend Salary Calculator:`, () => {
     expect(getByText(table, /van Vleuten/)).toBeInTheDocument()
     expect(getByText(table, /10101/)).toBeInTheDocument()
     expect(getByText(table, /Professional Cyclist/)).toBeInTheDocument()
-    expect(getByText(table, /120012|12,0012/)).toBeInTheDocument()
+    expect(getByText(table, /120012|120,012/)).toBeInTheDocument()
 
     submitEmployee(container, testEmployees[1])
 
@@ -124,11 +124,11 @@ describe(`Weekend Salary Calculator:`, () => {
     submitEmployee(container, testEmployees[0])
 
     // Select all five employee inputs:
-    const firstNameInput = getByTestId('firstNameInput')
-    const lastNameInput = getByTestId('lastNameInput')
-    const idInput = getByTestId('idInput')
-    const titleInput = getByTestId('titleInput')
-    const annualSalaryInput = getByTestId('annualSalaryInput')
+    const firstNameInput = getByTestId(container, 'firstNameInput')
+    const lastNameInput = getByTestId(container, 'lastNameInput')
+    const idInput = getByTestId(container, 'idInput')
+    const titleInput = getByTestId(container, 'titleInput')
+    const annualSalaryInput = getByTestId(container, 'annualSalaryInput')
 
     // Verify that each input has been cleared:
     expect(firstNameInput).not.toHaveValue()
@@ -189,7 +189,7 @@ describe(`Weekend Salary Calculator:`, () => {
     expect(getByText(table, /van Vleuten/)).toBeInTheDocument()
     expect(getByText(table, /10101/)).toBeInTheDocument()
     expect(getByText(table, /Professional Cyclist/)).toBeInTheDocument()
-    expect(getByText(table, /120012|12,0012/)).toBeInTheDocument()
+    expect(getByText(table, /120012|120,012/)).toBeInTheDocument()
 
     // Expect that the third row was not deleted:
     expect(getByText(table, /Marta/)).toBeInTheDocument()
