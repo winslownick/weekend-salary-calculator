@@ -2,6 +2,10 @@
 
 Your task is to create an application that records employee salaries and adds salaries up to report monthly costs.
 
+## Tips For Success
+
+The weekend assignments in Tier 2 are different than what we've been doing so far.  Please take a few minutes to watch [this video](https://vimeo.com/manage/videos/892049929) (password: `pr1me`).  It will help you get oriented and set you up for success!
+
 ## Requirements:
 
 * This application should have a form with five inputs that collect a new employee's *first name, last name, ID number, job title, annual salary*.
