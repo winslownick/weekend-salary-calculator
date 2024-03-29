@@ -4,7 +4,7 @@ Your task is to create an application that records employee salaries and adds sa
 
 ## Tips For Success
 
-The weekend assignments in Tier 2 are different than what we've been doing so far.  Please take a few minutes to watch [this video](https://vimeo.com/manage/videos/892049929) (password: `pr1me`).  It will help you get oriented and set you up for success!
+The weekend assignments in Tier 2 are different than what we've been doing so far.  Please take a few minutes to watch [this video](https://vimeo.com/892049929) (password: `pr1me`).  It will help you get oriented and set you up for success!
 
 ## Requirements:
 
